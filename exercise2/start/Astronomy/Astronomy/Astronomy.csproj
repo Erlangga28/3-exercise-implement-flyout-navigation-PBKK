@@ -30,9 +30,39 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
@@ -52,14 +82,27 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\comet.png" />
 	  <None Remove="Resources\Images\moon.png" />
 	  <None Remove="Resources\Images\question.png" />
+	  <None Remove="Resources\Images\starfield.png" />
 	  <None Remove="Resources\Images\sun.png" />
-	  <None Remove="Resources\Images\akun.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Pages\AstronomicalBodiesPage.xaml.cs">
+	    <DependentUpon>AstronomicalBodiesPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Pages\AboutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\AstronomicalBodiesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\AstronomicalBodyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\MoonPhasePage.xaml">
@@ -69,10 +112,5 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
-
-	<ItemGroup>
-	  <BundleResource Include="Resources\Images\akun.png" />
-	</ItemGroup>
-	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionAstronomyHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

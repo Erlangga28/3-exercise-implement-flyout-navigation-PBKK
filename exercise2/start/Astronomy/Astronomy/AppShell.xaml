@@ -1,4 +1,5 @@
-﻿<Shell
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
     x:Class="Astronomy.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,24 +10,25 @@
             <Image Source="moon.png"/>
         </Grid>
     </Shell.FlyoutHeader>
+    
+    <TabBar>
+    <Tab Title="Astronomy" Icon="moon.png">
+        <ShellContent Title="Moon" Icon="moon.png"
+                ContentTemplate="{DataTemplate local:MoonPhasePage}" />
+        <ShellContent Title="Daylight" Icon="sun.png"
+            ContentTemplate="{DataTemplate local:SunrisePage}" />
+        <ShellContent Title="Bodies" Icon="comet.png"
+            ContentTemplate="{DataTemplate local:AstronomicalBodiesPage}"/>
+    </Tab>
 
-    <FlyoutItem Title="Moon Phase" Icon="moon.png">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:MoonPhasePage}"/>
-    </FlyoutItem>
-
-    <FlyoutItem Title="Sunrise" Icon="sun.png">
-        <ShellContent 
-            ContentTemplate="{DataTemplate local:SunrisePage}"/>
-    </FlyoutItem>
-
-    <FlyoutItem Title="About" Icon="question.png">
+    <Tab Title="About" Icon="question.png">
         <ShellContent
             ContentTemplate="{DataTemplate local:AboutPage}"/>
-    </FlyoutItem>
+    </Tab>
 
-    <FlyoutItem Title="Account" Icon="akun.png">
+    <Tab Title="Account" Icon="user.png">
         <ShellContent
             ContentTemplate="{DataTemplate local:AccountPage}"/>
-    </FlyoutItem>
+    </Tab>
+    </TabBar>
 </Shell>

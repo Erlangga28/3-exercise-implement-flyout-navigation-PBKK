@@ -1,7 +1,11 @@
-﻿namespace Astronomy;
+﻿using Astronomy.Pages;
 
-public partial class AppShell : Shell {
-    public AppShell() {
+namespace Astronomy;
+
+public partial class AppShell : Shell
+{
+    public AppShell()
+    {
         InitializeComponent();
     }
 }
