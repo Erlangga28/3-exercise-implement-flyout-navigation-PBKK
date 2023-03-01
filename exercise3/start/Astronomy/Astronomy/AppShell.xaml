@@ -25,7 +25,7 @@
             ContentTemplate="{DataTemplate local:AboutPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Account" Icon="akun.png">
+    <FlyoutItem Title="Account" Icon="user.png">
         <ShellContent
             ContentTemplate="{DataTemplate local:AccountPage}"/>
     </FlyoutItem>
