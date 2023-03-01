@@ -1,0 +1,10 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Astronomy.Pages.AccountPage"
+             Title="My Account">
+
+    <StackLayout Padding="20" Spacing="10">
+        <Label Text="Name : Erlangga Wahyu Utomo" />
+        <Label Text="NRP : 5025201118" />
+    </StackLayout>
+</ContentPage>
