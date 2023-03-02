@@ -3,9 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Astronomy.Pages.AccountPage"
              Title="My Account">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="textColor">White</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource textColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+   
+    <Grid RowSpacing="4" ColumnSpacing="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-    <StackLayout Padding="25" Spacing="10">
-        <Label Text="Name : Erlangga Wahyu Utomo" />
-        <Label Text="NRP : 5025201118" />
-    </StackLayout>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblTitle" FontSize="30" FontAttributes="Bold" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" />
+
+
+        <VerticalStackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center">
+            <Label x:Name="lblName" FontSize="Large" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center">
+            <Label x:Name="lblNRP" FontSize="Large" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+    </Grid>
+
+
 </ContentPage>

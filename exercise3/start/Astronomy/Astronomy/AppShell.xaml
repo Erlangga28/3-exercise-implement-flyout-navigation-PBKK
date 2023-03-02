@@ -28,7 +28,7 @@
 
     <Tab Title="Account" Icon="user.png">
         <ShellContent
-            ContentTemplate="{DataTemplate local:AccountPage}"/>
+            ContentTemplate="{DataTemplate local:AccountBodiesPage}"/>
     </Tab>
     </TabBar>
 </Shell>

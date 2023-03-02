@@ -22,8 +22,22 @@ public partial class AccountPage : ContentPage
         }
     }
 
-    private void UpdateMyAccUI(string myAcc)
+    void UpdateMyAccUI(string myAcc)
     {
-        throw new NotImplementedException();
+        AccountBody send = FindMyAccData(myAcc);
+
+        lblTitle.Text = send.Title;
+        lblName.Text = send.Name;
+        lblNRP.Text = send.NRP;
+    }
+
+    AccountBody FindMyAccData(string myAccSendName)
+    {
+        return myAccSendName switch
+        {
+            "myAcc1" => AccountData.MyAcc1,
+            _ => throw new ArgumentException()
+        };
     }
 }
+
